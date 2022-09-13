@@ -43,8 +43,12 @@
 
 数据的增删改
 一, 插入数据
-
+  INSERT INTO 表名(列名1, 列名2,..) VALUES(值1, 值2,..)
+  EG:
 二, 修改数据
-
+  UPDATE 表名 SET 列名1=值1, 列名2=值2, ... WHERE 修改条件;
+  EG:  UPDATE T_table SET adddate=adddate-3 where id = 1;
 三, 删除数据
-  
+  语法1:  DELETE FROM 表名 WHERE 删除条件;  (删除的数据可以rollback, 且删除的时候可能产生碎片并且不释放空间)
+  语法2:  TRUNCATE TABLE 表名;  (先摧毁表结构,再重构表结构)
+  EG:  DELETE FROM T_table where id = 2;
